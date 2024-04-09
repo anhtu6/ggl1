@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extension Popup</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <div class="switch-container">
+    <h2 style="padding-right: 20px;">Turn on Extension</h2>
+    <label class="switch">
+        <!-- Set an ID for the checkbox -->
+        <input type="checkbox" id="extension-toggle-input" checked >
+        <span class="slider round"></span>
+        </label>
+   </div>
+  <h2>Saved campaign profiles</h2>
+  <div class="button-control">
+    <input id="campaign-name-input" type="text" placeholder="Campaign Name" >  
+    <button id="saveCampButton">Save Campaign </button>
+    <button id="readDataButton">Show All </button>
+    <button id="testActive">Show Active </button>
+  </div>
+  <div class="button-control">
+      <button id="export-camps-btn">Export</button>
+      <button id="import-camps-btn">Import</button>
+  </div>
+  <div id="import-export-status" style="display: none;">
+      <h3>Status <span id="import-export-span">Success</span></h3>
+  </div>
+
+  <h2>Active campaign: <span id="active-camp">Camp</span></h2>
+
+  <div id="campaigns-table">
+    <div class="singleCampaign">
+        <div class="brief-campaign">
+            <div class="brief-info-section">
+                <span>This is campaign one</span>
+            </div>
+            <div class="action-control">
+                <img src="img/arrow_down.png" class="arrow-button" onclick="toggleCollapse(this.parentNode.parentNode.parentNode)">
+                <img src="img/compose.png" class="edit-button">
+                <img src="img/trash.png" class="delete-button" onclick="deleteCampaign(this.parentNode.parentNode.parentNode)">
+            </div>
+        </div>
+        <div class="main-row" style="display: none;">
+            <div class="info-section">
+                <span>Headline:</span> Head1, Head2, Head1, Head2, Head1, Head2, Head1, Head2, Head1, Head2, Head1, Head2
+            </div>
+            <div class="info-section">
+                <span>siteUrl:</span> apple.com
+            </div>
+            <div class="info-section keywordTag">
+                <span>keywordTag:</span>
+                <div class="tags-input-container">
+                    <span class="tag">Hello <i class="remove-tag" onclick="removeTag(this)">×</i></span>
+                    <span class="tag">World <i class="remove-tag" onclick="removeTag(this)">×</i></span>
+                    <input type="text" placeholder="Add a tag" onkeydown="addTag(event)">
+                </div>
+            </div>
+            <div class="info-section">
+                <span>keyword</span>
+                <textarea placeholder="Enter keywords one per line"></textarea>
+            </div>
+        </div>
+           
+           
+    
+       
+    </div>
+    
+    <div class="singleCampaign">
+        <div class="brief-campaign">
+            <div class="brief-info-section">
+                <span>This is campaign one</span>
+            </div>
+            <div class="action-control">
+                <img src="img/arrow_down.png" class="arrow-button" onclick="toggleCollapse(this.parentNode.parentNode.parentNode)">
+                <img src="img/compose.png" class="edit-button">
+                <img src="img/trash.png" class="delete-button" onclick="deleteCampaign(this.parentNode.parentNode.parentNode)">
+            </div>
+        </div>
+        <div class="main-row" style="display: none;">
+            <div class="info-section">
+                <span>Headline:</span> Head1, Head2, Head1, Head2, Head1, Head2, Head1, Head2, Head1, Head2, Head1, Head2
+            </div>
+            <div class="info-section">
+                <span>siteUrl:</span> apple.com
+            </div>
+            <div class="info-section keywordTag">
+                <span>keywordTag:</span>
+                <div class="tags-input-container">
+                    <span class="tag">Hello <i class="remove-tag" onclick="removeTag(this)">×</i></span>
+                    <span class="tag">World <i class="remove-tag" onclick="removeTag(this)">×</i></span>
+                    <input type="text" placeholder="Add a tag" onkeydown="addTag(event)">
+                </div>
+            </div>
+            <div class="info-section">
+                <span>keyword</span>
+                <textarea placeholder="Enter keywords one per line"></textarea>
+            </div>
+        </div>
+           
+           
+    
+       
+    </div>
+  </div>
+
+
+  <script src="popup.js"></script>
+</body>
+</html>
